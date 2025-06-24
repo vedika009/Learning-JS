@@ -19,7 +19,7 @@ const regularUser = {
 }
 
 console.log(regularUser.fullname.userfullname.lastname);
-// question mark after an object/value means what if it doesn't exist?, so instead of if-else it's used
+// question mark after an object/value means what if it doesn't exist?, so instead of if-else it's used - called optional chaining
 
 const obj1 = { 1: "a", 2: "b"}
 const obj2 = { 3: "a", 4: "b"}
