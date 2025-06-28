@@ -1,0 +1,64 @@
+JavaScript Execution Context----------------------
+
+Code -->  Global Execution Context ('this' keyword)
+
+'this' keyword's value in browser = Window object
+
+1. Global Execution Context 
+2. Function Execution Context
+- Eval Execution Context
+
+1. Memory Creation Phase (or Creation Phase)
+2. Execution Phase
+
+FLOW OF STEPS FOR A JS PROGRAM:
+1. Global Execution (this)
+
+2. Memory Creation Phase
+    val1 -> umdefined
+    val2 -> undefined
+    addnum -> definition
+    result1 -> undefined
+    result2 -> undefined
+
+3. Execution Phase     
+    val1 <- 10
+    val2 <- 5
+    addnum -->  [New Execution Context]
+                            |
+                [ New Varibale Environment + Execution Thread ]
+                1. Memory Creation Phase (or Creation Phase)
+                    val1 -> undefined
+                    val2 -> undefined
+                    total -> undefined
+
+                2. Execution Phase
+                    num1 <- 10
+                    num2 <- 5
+                    total <- 15  --will return to Global Execution Context
+
+                - Gets Deleted   
+    result1 <- 15
+
+    addnum -->  [New Execution Context]
+                            |
+                [ New Varibale Environment + Execution Thread ]
+                1. Memory Creation Phase (or Creation Phase)
+                    val1 -> undefined
+                    val2 -> undefined
+                    total -> undefined
+
+                2. Execution Phase
+                    num1 <- 10
+                    num2 <- 2
+                    total <- 12  --will return to Global Execution Context
+
+                - Gets Deleted   
+    result2 <- 12
+
+
+    ---------------------------------CALL STACK---------------------------------------
+
+
+    
+    Global Execution  

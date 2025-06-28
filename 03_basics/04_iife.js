@@ -3,15 +3,15 @@
 - for maybe a database connection, to be invoked immediately
 - for not letting global variables disturb anything - nnot to pollute anything
 - immediately execute
- */
 
-// function chai() {
-//     console.log("DB connected")
-// }
+function chai() {
+    console.log("DB connected")
+}
 
-// chai() // - to invoke
+chai() - to invoke
 
-// immediately invoke - put parenthesis around function 
+immediately invoke - put parenthesis around function
+*/ 
 
 (function chai() { 
     // named IIFE
@@ -22,7 +22,7 @@
 
 // ()() - definition and execution
 
-// arrow function - here, we are passing arguments also
+// arrow function - (here, we are passing arguments also)
 ( (name) => {
     console.log(`DB Connected 2 ${name}`);
 } )(`Vedika`)
