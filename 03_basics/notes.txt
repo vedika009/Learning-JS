@@ -60,5 +60,7 @@ FLOW OF STEPS FOR A JS PROGRAM:
     ---------------------------------CALL STACK---------------------------------------
 
 
-    
+    --
+    --
+    --
     Global Execution  
