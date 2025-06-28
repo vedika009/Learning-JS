@@ -4,7 +4,7 @@ var accountPswd = "12345"
 accountCity = "Indore" 
 let accountState; 
 
-// accountId = 2 // not allowed
+// accountId = 2 // not allowed becasue const
 
 accountEmail = "medha@hc.com"
 accountPswd = "89675"

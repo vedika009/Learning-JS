@@ -15,7 +15,7 @@ const user = {
 // user.username = "Medha" //change the value
 // user.welcomeMessage() // changed value
 
-console.log(this) // current cotext is empty
+//console.log(this) // current cotext is empty
 
 // function chai(){
 //     let username = "Vedika"
@@ -37,4 +37,28 @@ const chai = () => {
 }
 
 
-chai()
+//chai()
+
+// const addTwo = (num1, num2) => {
+//     return num1 + num2
+// }
+
+// ------------------------ IMPLICIT RETURN -------------------------
+
+//const addTwo = (num1, num2) => num1 + num2 // return and scope are removed
+
+//const addTwo = (num1, num2) => (num1 + num2) // add parenthesis 
+
+// obbject ko bina { } ke nahi likh skte, isliye enclose in parenthesis 
+const addTwo = (num1, num2) => ({username: "Vedika"})
+
+console.log(addTwo(3, 4))
+
+const myArr = [2, 6, 7, 8]
+
+// myArr.forEach(function (){
+
+// })
+
+myArr.forEach(() => {}) // arrow function
+//myArr.forEach(() => ()) // implicit return
