@@ -28,5 +28,18 @@ if (Object.keys(emptyObj).length === 0) {
 // Nullish Coalescing Operator (??)
 
 let val1;
-val1 = 5 ?? 4
-console.log(val1);
+//val1 = 5 ?? 4
+// console.log(val1); // 5
+// val1 = null ?? 10 
+// console.log(val1) // 10 (safety check for null)
+// val1 = undefined ?? 15
+// console.log(val1) // 15
+val1 = null ?? 10 ?? 15 
+console.log(val1); // first value found, will be assigned
+
+//------------------ TERNARY OPERATOR --------------------------------------------
+ // condition ? True : False
+
+const iceTeaPrice = 100
+
+iceTeaPrice >= 80 ? console.log("yay, more than 80") : console.log("nope, less than 80")
