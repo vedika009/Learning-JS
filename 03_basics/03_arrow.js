@@ -49,7 +49,7 @@ const chai = () => {
 
 //const addTwo = (num1, num2) => (num1 + num2) // add parenthesis 
 
-// obbject ko bina { } ke nahi likh skte, isliye enclose in parenthesis 
+// object ko bina { } ke nahi likh skte, isliye enclose in parenthesis 
 const addTwo = (num1, num2) => ({username: "Vedika"})
 
 console.log(addTwo(3, 4))
