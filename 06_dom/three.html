@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vedika and Code</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    
+</body>
+<script>
+    const div = document.createElement('div')
+    console.log(div)
+    div.className = 'main'
+    div.id = Math.round(Math.random() * 10 + 1)
+    // other attributes 
+    div.setAttribute("title", "generated title") // doesn't overwrite
+    div.style.backgroundColor = 'green'
+    div.style.padding = '12px'
+    //div.innerText = "Vedika and Code" //overwrites the value, one round-trip more
+    // OR
+    const addText = document.createTextNode("Vedika and Code")
+    div.appendChild(addText)
+
+    document.body.appendChild(div)
+</script>
+</html>

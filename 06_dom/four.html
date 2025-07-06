@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vedika Mishra | DOM</title>
+</head>
+<body style="background-color: #212121; color: #fff">
+    <ul class="language">
+        <li>JavaScript</li>
+        <li>Java</li>
+        <li>PHP</li>
+    </ul>
+</body>
+<script>
+    // const myList = document.getElementsByClassName('language')[0]
+    // const newItem = document.createElement('li')
+    // newItem.textContent = "HTML"
+    // myList.appendChild(newItem)
+
+    function language(langName) {
+        const li = document.createElement("li")
+        li.innerHTML = `${langName}` // traverses the tree to the end (innerHTML)
+        document.querySelector('.language').appendChild(li) 
+    }
+    language("Python")
+    language("TypeScript") 
+
+    //optimized Approach
+    function addOptiLanguage(langName) {
+        const li = document.createElement("li")
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li) 
+    }
+    addOptiLanguage("GoLang")
+
+    //Edit
+    
+
+</script>
+</html>
