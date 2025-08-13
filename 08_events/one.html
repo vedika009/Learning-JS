@@ -5,16 +5,85 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML events</title>
 </head>
-<body>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing images</h2>
     <div >
         <ul id="images">
             <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
             <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
             <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
-            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
             <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
             <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
         </ul>
    </div>
 </body>
+
+<script>
+    // js is a seqquentially run language (we also do asynchronous)
+    // activity pe invoke hoti h kuch cheeze - events
+    // html ke andar inject mat karo - onclick attribute, it's bad for scalability (onclick="alert('owl')")
+
+    // onlcick evenet can also have problems
+    // document.getElementById('owl').onclick = function(){
+    //     alert("owl clicked!")
+    // }
+
+    // document.getElementById('owl').addEventListener('click', function(){
+    //     alert("owl clicked again")
+    // }, false)
+
+// third parameter - default is false
+
+// attachEvent method (used in internet explorer era)
+// JqUERY - on (event listener)
+
+// Event object 
+
+// document.getElementById('owl').addEventListener('click', function(e){
+//     console.log(e)
+// }, false)
+// type, timestamp, defaultPrevented
+// target, toElement, srcElement, currentTarget
+// clientX, clientY, screenX, screenY
+//altkey, ctrlkey, shiftkey, keyCode
+
+// EVENT PROPAGATION
+// -event bubbling - default (false) 
+// -event capturing
+
+// document.getElementById('images').addEventListener('click', function(e){
+//     console.log("click inside the UL")
+// }, false)
+
+// document.getElementById('owl').addEventListener('click', function(e){
+//     console.log("owl clicked")
+
+//     // to stop bubbling
+//     e.stopPropagation()
+// }, false)
+
+// in false - owl clicked -> click inside the UL - bubbling
+// in true - click inside the UL -> owl clicked - capturing
+
+// document.getElementById('google').addEventListener('click', function(e){
+//     e.preventDefault() // open nahi hoga ab google, click krne pe
+//     e.stopPropagation() // to prevent bubbling
+//     console.log("google clicked")
+// })
+
+// when you click on the image, the image should vanish
+document.querySelector('#images').addEventListener('click', function(e){
+    // let removeIt = e.target.parentNode
+    // removeIt.remove() // list item pe click kiya instead of image, toh sb chala jaayega (event spillover)
+    //removeIt.parentNode.removeChild(removeIt) - another way
+
+    console.log(e.target.tagName)
+    if(e.target.tagName === 'IMG'){
+        let removeIt = e.target.parentNode
+        removeIt.remove() 
+    }
+}, false)
+
+</script>
 </html>
