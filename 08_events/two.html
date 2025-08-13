@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async JavaScript</title>
+</head>
+<body>
+    <h1>Vedika and Code</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    // setTimeout(function(){ // timeout bs ek baar hee chalta h, unlike interval
+    //     console.log("Vedika")
+    // }, 2000)
+
+    // another way
+    const sayVedika = function(){
+        console.log("Vedika")
+    }
+    setTimeout(sayVedika, 2000)
+
+    const changeh1 = function(){
+        document.querySelector('h1').innerHTML = "best koder"
+    }
+    const changeMe = setTimeout(changeh1, 3000)
+
+    // what if i want to stop the event in the middle? -clearTimeout
+    document.querySelector('#stop').addEventListener('click', function(){
+        clearTimeout(changeMe)
+        console.log("stopped")
+    })
+    
+</script>   
+</html>
