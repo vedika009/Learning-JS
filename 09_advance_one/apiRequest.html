@@ -1,0 +1,56 @@
+<!-- 
+ -Before fetch, XML was used for APIs. It was strictly AJAX programming (async javascript)
+ -states ke through maintain hota h (readyState)
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Request</title>
+</head>
+<body style="background-color: #212121; color: aliceblue;">
+        0	UNSENT	Client has been created. open() not called yet.
+        <br>
+1	OPENED	open() has been called.
+<br>
+2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+<br>
+3	LOADING	Downloading; responseText holds partial data.
+<br>
+4	DONE	The operation is complete.
+</body>
+<script>
+    const requestURL = 'https://api.github.com/users/vedika009'
+    const xhr = new XMLHttpRequest()
+    xhr.open('GET', requestURL)
+    // console.log("here") 
+    // console.log(xhr.readyState) // readyState is 1
+
+    // to continuously monitor
+    xhr.onreadystatechange = function(){
+        console.log(xhr.readyState) // 2 3 4 
+        // detect the state
+        if(xhr.readyState == 4){
+            const data = JSON.parse(this.responseText) // 'this' defines the context - current context
+            // this will print the api, and we can also access the specific parts through dot operator
+
+            console.log(data)
+            console.log(typeof data) // string before, now object (after converting)
+            console.log(data.followers) // undefined
+
+            // convert the string to object - JSON.parse(--)
+        }
+    }
+    xhr.send()
+
+
+    // ASSIGNMENT - a card with photo and followers, and a button with which you can download it
+</script>
+</html>
+
+<!-- 
+    node.js is an implementation of V8 engine
+  -->
