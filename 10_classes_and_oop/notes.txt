@@ -1,0 +1,28 @@
+JavaScript and Classes
+
+- paradigm - style or structure of something
+
+JS is a prototype based language. neither object oriented nor functional
+- it doesn't have classes
+
+# OOP 
+
+Object
+- collection of properties and methods
+- ex: toLowerCase
+
+# why use OOP
+
+## parts of OOP
+object literal {}
+
+- constructor functions
+- prototype
+- classes
+- instances (new, this)
+
+4 keywords/pillars: 
+1. abstraction
+2. inheritance
+3. inheritance
+4. polymorphism
